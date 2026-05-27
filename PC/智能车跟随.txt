@@ -1,0 +1,8 @@
+1.相关环境搭建
+pip install opencv-python
+pip install opencv-python pillow
+pip install ultralytics -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install lap
+pip install torch -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install cvzone -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install filterpy -i https://pypi.tuna.tsinghua.edu.cn/simple 

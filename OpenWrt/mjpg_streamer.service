@@ -1,0 +1,20 @@
+[Unit]
+Description=MJPG-Streamer Video Streaming Service
+After=network.target
+Documentation=https://github.com/jacksonliam/mjpg-streamer
+
+[Service]
+Type=forking
+User=root
+WorkingDirectory=/opt/car_controller
+PIDFile=/var/run/mjpg_streamer.pid
+ExecStart=/opt/car_controller/mjpg_streamer.sh start
+ExecStop=/opt/car_controller/mjpg_streamer.sh stop
+ExecReload=/opt/car_controller/mjpg_streamer.sh restart
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

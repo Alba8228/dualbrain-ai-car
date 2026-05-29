@@ -69,9 +69,9 @@ OpenWRT+STM32/
 │           ├── sg90.c/h        # 舵机控制
 │           ├── lcd.c/h         # LCD显示
 │           ├── track.c/h       # 红外循迹
-│           ├── xj.c            # 循迹模式
-│           ├── zz.c            # 避障模式
-│           ├── gensui.c        # AI跟随模式
+│           ├── xj.c            
+│           ├── zz.c           
+│           ├── gensui.c        
 │           └── AI_Mode/        # 上位机AI参考代码
 │
 └── OpenWrt/                     # OpenWRT网络与视频中心
@@ -90,7 +90,7 @@ OpenWRT+STM32/
 - **YOLOv8n** 轻量级目标检测
 - **SORT** 多目标跟踪算法
 - 基于检测框位置与面积的决策算法
-- 多线程 + 队列架构，推理延迟 < 10ms
+- 多线程 + 队列架构，推理延迟 < 2ms
 
 ### 2. 视频推流
 - **MJPG-Streamer** 实时视频推流
@@ -118,7 +118,7 @@ OpenWRT+STM32/
 |------|------|
 | PC端 | Python 3.7+, OpenCV, PyTorch |
 | OpenWRT | OpenWRT系统, Python3, MJPG-Streamer |
-| STM32 | Keil MDK-ARM, STM32F103开发板 |
+| STM32 | Keil MDK-ARM, STM32F103RCT6开发板 |
 
 ### 1. PC端配置
 
@@ -129,7 +129,7 @@ pip install ultralytics lap torch cvzone filterpy -i https://pypi.tuna.tsinghua.
 python ai_test.py
 ```
 
-详细说明见 [PC/README.md](file:///c:\Users\beast\Desktop\简历项目合集 - 副本\OpenWRT+STM32\PC\README.md)
+详细说明见 [.\PC\README.md)
 
 ### 2. OpenWRT端部署
 
@@ -141,13 +141,13 @@ chmod +x install.sh
 systemctl start car_controller
 ```
 
-详细说明见 [OpenWrt/README.md](file:///c:\Users\beast\Desktop\简历项目合集 - 副本\OpenWRT+STM32\OpenWrt\README.md)
+详细说明见 [.\OpenWRT+STM32\OpenWrt\README.md)
 
 ### 3. STM32端烧录
 
 使用Keil MDK-ARM打开 `STM32/project/CarProject.uvprojx`，编译并烧录到STM32F103开发板。
 
-详细说明见 [STM32/README.md](file:///c:\Users\beast\Desktop\简历项目合集 - 副本\OpenWRT+STM32\STM32\README.md)
+详细说明见 [.\STM32\README.md)
 
 ## 通信协议
 
@@ -198,7 +198,7 @@ checksum = sum(frame_data[:-1]) & 0xFF
 ## 硬件清单
 
 - STM32F103R8开发板
-- OpenWRT路由器（如MT7628/MT7620）
+- OpenWRT路由器（MT7628）
 - USB摄像头
 - HC-SR04超声波模块
 - SG90舵机
